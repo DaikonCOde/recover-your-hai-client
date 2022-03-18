@@ -12,6 +12,7 @@ export const ContentExperience = styled(SectionGray)`
 
     .subTitle {
       font-size: ${({ theme}) => theme.text.sub_title };
+      line-height: ${({ theme}) => theme.l_height.sub_title };
       color: ${({ theme }) => theme.opacity.text[90]};
       font-weight: 400;
       text-align: center;

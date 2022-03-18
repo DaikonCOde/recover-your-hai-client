@@ -4,12 +4,41 @@ import { SectionLight } from "../../../../styles/Sections";
 export const ContentStories = styled(SectionLight)`
   
   .body {
-    .resultsSlide {
+    .contentSlides {
       margin: 30px auto;
-      background: #333;
       width: 100%;
-      height: 260px;
+      min-height: 280px;
+      height: calc(100vh - 300px);
+      overflow: hidden;
+      position: relative;
     }
+    .resultsSlide {
+      display: flex;
+      flex-wrap: nowrap;
+      transition: all .5s linear;
+    }
+
+    .contentArrows {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .arrow {
+      position: absolute;
+      top: calc(50% - 25px);
+      color: ${({ theme }) => theme.colors.principal};
+      svg {
+        font-size: 50px;
+      }
+    }
+
+    .arrowLeft {
+      left: 0;
+    }
+    .arrowRight {
+      right: 0;
+    }
+
   }
 
 `

@@ -40,6 +40,7 @@ export const ContentFooter = styled.footer`
       .item {
         display: flex;
         align-items: center;
+        margin: 0 0 5px 0;
         i {
           color: ${({ theme }) => theme.colors.principal};
           svg {

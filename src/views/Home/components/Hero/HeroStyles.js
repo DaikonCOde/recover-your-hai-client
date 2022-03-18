@@ -25,7 +25,7 @@ export const Title = styled.div`
 position: relative;
   .title {
     font-size: ${({ theme }) => theme.text.hero};
-    line-height: ${({ theme }) => theme.l_height[40]};
+    line-height: ${({ theme }) => theme.l_height.hero};
     font-weight: 700;
   }
   .subTitle {

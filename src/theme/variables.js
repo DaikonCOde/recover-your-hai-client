@@ -26,7 +26,9 @@ module.exports = {
 
   },
   l_height: {
-    40: '40px'
+    hero: '4rem',
+    sub_title: '2.2rem',
+    paragraph: '2rem', 
   },
   shadow: {
     cad: '0 5px 10px rgb(16 16 16 / 20%)',

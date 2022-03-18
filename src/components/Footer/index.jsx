@@ -53,7 +53,7 @@ const Footer = () => {
           <ul className="contact">
             <li className="item">
               <i>
-                <MdPlace />
+                <FaFacebook />
               </i>
               <span>Facebook</span>
             </li>
