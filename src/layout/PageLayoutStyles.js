@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const Layout = styled.header`
+export const Layout = styled.section`
   
 `

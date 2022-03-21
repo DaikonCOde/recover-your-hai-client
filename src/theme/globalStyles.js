@@ -57,4 +57,11 @@ export const GlobalStyles = createGlobalStyle`
     outline: none;
 
   }
+
+  ${'' /* Links */}
+  a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+  }
 `

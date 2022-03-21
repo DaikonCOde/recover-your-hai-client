@@ -1,8 +1,12 @@
+// hooks
 import { useState, useEffect } from 'react';
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+// Component
 import BeforeAndAfter from '../../../../components/BeforeAndAfter';
-
+// styles
 import { ContentStories } from './StoriesStyles'
-
+// icons
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 const Stories = () => {
@@ -11,13 +15,38 @@ const Stories = () => {
   const [ traslate, setTraslate ] = useState(0);
   const [ childsSlide, setChildsSlide] = useState(0);
 
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  const sectionVariants = {
+    visible: {
+      y: 1,
+      opacity: 1, 
+      transition: {
+        duration: 1.2
+      }
+    },  
+    hidden: {
+      y: 200,
+      opacity: 0,
+    }
+  }
+
+  // change before and after
   useEffect( () => {
     const amount = slideRef?.childElementCount;
 
     setChildsSlide(amount)
   }, [slideRef] )
   
+  // observer 
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
 
+  // function to change the before and after slide
   const handleArrows = (e, position) => {
     // porcent to tranlate
     const amountTraslate = ((100 / childsSlide) )
@@ -48,10 +77,19 @@ const Stories = () => {
 
 
   return (
-    <ContentStories>
+    <ContentStories as={motion.section}
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={sectionVariants}
+    >
       <div className="header">
-        <p className="subTitle">Estos son algunos de nuestros</p>
-        <h2 className="title">Casos de Éxito</h2>
+        <p className="subTitle" >
+          Estos son algunos de nuestros
+        </p>
+        <h2 className="title" >
+          Casos de Éxito
+        </h2>
       </div>
       <div className="body">
         <p className="paragraph">
