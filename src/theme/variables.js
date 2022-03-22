@@ -34,7 +34,8 @@ module.exports = {
   shadow: {
     cad: '0 5px 10px rgb(16 16 16 / 20%)',
     box: '0 5px 10px #10101026',
-    btn: '0 3px 8px #10101033'
+    btn: '0 3px 8px #10101033',
+    input: '0 3px 10px rgb(16 16 16 / 10%);'
   },
   rounded: {
     xs: '10px'

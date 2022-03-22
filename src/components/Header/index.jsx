@@ -1,13 +1,14 @@
 import { useState } from 'react';
 // Components
 import NavMobile from '../NavMobile';
+import { Link } from 'react-router-dom'
 // Animation
 import { motion, AnimatePresence } from 'framer-motion';
 // Assets
-import Logo from '../../assets/logo-verde.png';
+import Logo from '../../assets/logo-ryh.svg';
 import { MdMenu } from "react-icons/md";
 // Styles
-import { ContentHeader, ContentLogo, NavMenuMobile } from './HeaderStyles';
+import { ContentHeader } from './HeaderStyles';
 
 const Header = () => {
 
@@ -23,25 +24,30 @@ const Header = () => {
         animate={{ boxShadow: '0 5px 10px rgba(16, 16, 16, 0.15)' }}
         transition={{ duration: 1.5, delay: 2 }}
       >
-        <ContentLogo as={motion.div} 
+        <motion.div className="contentBrand"
           initial={{ x: -160  }}
           animate={{ x: 0 }}
           transition={{ duration: 1 }}
         >
-          <img src={Logo} alt="Recover Your Hair logo" />
-        </ContentLogo>
-        <NavMenuMobile 
-          as={motion.div} 
+          <Link to='/'>
+            <img src={Logo} alt="Recover Your Hair logo" />
+          </Link>
+
+        </motion.div>
+
+        <motion.div 
+          className="navMenuMobile" 
           initial={{ x: 100 }}
           animate={{ x: 0 }}
-          transition={{ duration: 1, delay: 0.7 }}
+          transition={{ duration: 1, delay: 0.8 }}
           onClick={ toggleMenu }
         >
           <i>
             <MdMenu />
           </i>
-        </NavMenuMobile>
+        </motion.div>
       </ContentHeader>
+
       {/* open menu */}
       <AnimatePresence>
         { 

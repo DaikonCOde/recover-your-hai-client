@@ -8,17 +8,16 @@ export const ContentHeader = styled.header`
   box-shadow: ${({ theme }) => theme.shadow.box};
   z-index: 10;
   position: relative;
-`
-export const ContentLogo = styled.div`
-  width: 140px;
-  img {
-    width: 100%;
+  .contentBrand {
+    width: 120px;
+    img {
+      width: 100%;
+    }
   }
-`
-
-export const NavMenuMobile = styled.div`
-  width: 30px;
-  i {
-    cursor: pointer;
+  .navMenuMobile {
+    width: 30px;
+    i {
+      line-height: 30px;
+    }
   }
 `

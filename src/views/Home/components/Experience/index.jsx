@@ -17,7 +17,7 @@ const Experience = () => {
         <h4 className="subTitle">
           Lo he vivido y voy ayudarte
         </h4>
-        <p className="paragraph" css="color: red;">
+        <p className="paragraph">
           Cuando fui a elegir una clínica había tantas opciones que me sentía bloqueado. Como saber si elegía la correcta en algo tan importante. Tras mucho investigar y preguntar me decidí, sin embargo me sentía un poco incomprendido en un país extraño y a la vuelta.<br />
           Por eso me gustaría ayudarte con todo los pasos que fueron dificiles para mi.
         </p>

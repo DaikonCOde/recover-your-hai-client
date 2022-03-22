@@ -1,11 +1,11 @@
 // Hooks
 import { NavLink } from "react-router-dom"
 // Animation
-import { motion } from "framer-motion"
+import AsideLayout from "../../layout/AsideLayout"
 // Assets
 import { MdClose, MdHome, MdEmergency, MdSentimentSatisfiedAlt } from "react-icons/md"
 // Styles
-import { ContentNavMobile, Overlay } from "./NavMobileStyles"
+import { ContentNavMobile } from "./NavMobileStyles"
 
 // list Menu
 const listMenu = [
@@ -30,22 +30,11 @@ const listMenu = [
   },
 ]
 
-const NavMobile = ({ close }) => {
+const NavMobile = ({ close}) => {
   return (
-    <>
-      <ContentNavMobile
-        as ={ motion.nav }
-        initial={{ x: 300 }}
-        animate={ { x: 0 } }
-        transition={ { delay: 0.3, duration: 0.5 } }
-        exit={{x: 300  }}
-      >
-        <div className="top">
-          <h4 className="label">Menú</h4>
-          <i onClick={ close } >
-            <MdClose />
-          </i>
-        </div>
+    <AsideLayout close={close} title={'Menú'} >
+      <ContentNavMobile>
+        
         <ul className="listMenu">
           {
             listMenu.map(({ id, label, href, icon: Icon }) => (
@@ -65,15 +54,7 @@ const NavMobile = ({ close }) => {
           }
         </ul>
       </ContentNavMobile>
-
-      <Overlay 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{opacity: 0}}
-        transition={{ duration: 0.3 }}
-        onClick={close} 
-      ></Overlay>
-    </>
+    </AsideLayout>
   )
 }
 
