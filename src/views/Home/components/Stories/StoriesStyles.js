@@ -8,7 +8,6 @@ export const ContentStories = styled(SectionLight)`
       margin: 30px auto;
       width: 100%;
       min-height: 280px;
-      height: calc(100vh - 300px);
       overflow: hidden;
       position: relative;
     }

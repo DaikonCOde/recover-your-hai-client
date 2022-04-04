@@ -9,15 +9,16 @@ const Button = styled.button`
   position: relative;
   transition: all .3s linear;
   font-weight: 400;
+  line-height: 20px;
   &:hover { 
     background: ${({ theme }) => theme.colors.principal_hover};
   }
 `
 
 
-const ButtonCTA = ({ label, styles }) => {
+const ButtonCTA = ({ label, styles, handleClick }) => {
   return (
-    <Button css={styles} >
+    <Button css={styles} onClick={handleClick} >
       { label }
     </Button>
   )

@@ -4,7 +4,7 @@ import { StyleCard } from '../../styles/Cards'
 // Components
 import ButtonCTA from '../ButtonCTA'
 
-const Card = ({ img, title, paragraph }) => {
+const Card = ({ img, title, paragraph, handleClick }) => {
   return (
     <StyleCard className="cardsSlide">
       <div className="imgCard">
@@ -18,6 +18,7 @@ const Card = ({ img, title, paragraph }) => {
         <ButtonCTA 
           label='Más información'
           styles='display:block; margin: 30px auto 0;'
+          handleClick={handleClick}
         />
       </div>
     </StyleCard>

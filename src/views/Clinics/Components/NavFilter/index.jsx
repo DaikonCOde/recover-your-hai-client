@@ -2,17 +2,33 @@ import { useState, useEffect } from 'react'
 // Components
 import AsideLayout from '../../../../layout/AsideLayout'
 import RangeFilter from '../RangeFilter';
+import SelectFilter from '../SelectFilter';
+import ButtonBorder from '../../../../commons/ButtonBorder/ButtonBorder';
+
 import { ContentNavFilter } from './NavFilterStyles';
 
+const places = [
+  {
+    id: 1,
+    label: 'España'
+  },
+  {
+    id: 2,
+    label: 'Turquia'
+  }
+]
 
 const NavFilter = ({ close }) => {
   
   const [ valueFilters, setValueFilters ] = useState({
     price: 1500,
-    foriculos: 750
+    foriculos: 750,
+    place: undefined,
   })
+
+
   
-  const changeValueFilter = (e) => {
+  const changeValueRangeFilter = (e) => {
 
     const name = e.target.name;
     const value = e.target.value;
@@ -23,6 +39,17 @@ const NavFilter = ({ close }) => {
     }) )
 
   } 
+
+  const changeValueSelectFilter = (value) => {
+    setValueFilters( prev => ({
+      ...prev,
+      place: value
+    }))
+  }
+
+  const handleClickFilter = () => {
+    close()
+  }
 
   // price
   useEffect( () => {
@@ -66,7 +93,7 @@ const NavFilter = ({ close }) => {
           max={ 3000 }
           name="price"
           value={valueFilters.price}
-          change={changeValueFilter}
+          change={changeValueRangeFilter}
           id={'valuePrice'}
           symbole="€"
         /> 
@@ -77,8 +104,21 @@ const NavFilter = ({ close }) => {
           name={'foriculos'}
           id={'valueForiculos'}
           value={valueFilters.foriculos}
-          change={changeValueFilter}
-        /> 
+          change={changeValueRangeFilter}
+        />
+        <SelectFilter 
+          label={'Lugar'}
+          values={places}
+          value={valueFilters.place}
+          change={changeValueSelectFilter}
+          name="place"
+        />
+
+        <ButtonBorder 
+          label={'Filtrar'}
+          handleClick={ handleClickFilter }
+        />
+
       </ContentNavFilter>
     </AsideLayout>
   )

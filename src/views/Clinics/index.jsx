@@ -2,6 +2,7 @@ import { useState } from 'react'
 // Components
 import Card from '../../commons/Card';
 import NavFilter from './Components/NavFilter';
+import ModalClinic from './Components/ModalClinic';
 // assets
 import Insparya from '../../assets/insparya.png';
 import { MdFilterAlt } from 'react-icons/md';
@@ -12,7 +13,8 @@ import { ContentClinics } from './ClinicsStyles.js';
 
 const Clinics = () => {
 
-  const [ isOpenFilter, setIsOpenFilter ] = useState(false) 
+  const [ isOpenFilter, setIsOpenFilter ] = useState(false);
+  const [ isOpenModal, setIsOpenModal ] = useState(false);
 
   const toogleFilter = () => setIsOpenFilter(!isOpenFilter);
 
@@ -41,16 +43,19 @@ const Clinics = () => {
             img={Insparya}
             title={'Insparya'}
             paragraph='Una de las favoritas en la península. Ha cogido gran nombre por ser la clínica de Cristiano Ronaldo, con una gran calidad y un precio intermedio. tienen clínicas en Madrid, Marbella, Oporto, Lisboa, Braga y Vilamoura desde 4000€.'
+            handleClick={() => setIsOpenModal(true)}
           />
           <Card 
             img={Insparya}
             title={'Insparya'}
             paragraph='Una de las favoritas en la península. Ha cogido gran nombre por ser la clínica de Cristiano Ronaldo, con una gran calidad y un precio intermedio. tienen clínicas en Madrid, Marbella, Oporto, Lisboa, Braga y Vilamoura desde 4000€.'
+            handleClick={() => setIsOpenModal(true)}
           />
           <Card 
             img={Insparya}
             title={'Insparya'}
             paragraph='Una de las favoritas en la península. Ha cogido gran nombre por ser la clínica de Cristiano Ronaldo, con una gran calidad y un precio intermedio. tienen clínicas en Madrid, Marbella, Oporto, Lisboa, Braga y Vilamoura desde 4000€.'
+            handleClick={() => setIsOpenModal(true)}
           />
         </div>
       </ContentClinics>
@@ -59,6 +64,11 @@ const Clinics = () => {
         {
           isOpenFilter && (
             <NavFilter close={toogleFilter} />
+          )
+        }
+        {
+          isOpenModal && (
+            <ModalClinic onHide={ () => setIsOpenModal(false) }/>
           )
         }
       </AnimatePresence>
