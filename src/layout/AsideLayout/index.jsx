@@ -14,7 +14,7 @@ const AsideLayout = ({close, title, children}) => {
         exit={{x: 300, transition: { duration: 0.5 }  }}
       >
         <div className="top">
-          <h4 className="label">{title}</h4>
+          <h5 className="label">{title}</h5>
           <i onClick={ close } >
             <MdClose />
           </i>

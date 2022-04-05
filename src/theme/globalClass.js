@@ -9,11 +9,24 @@ export const GlobalClass = createGlobalStyle`
   }
 
   ${'' /* custom titles */}
-  h4.label {
+  h3.subTitle {
+    font-size: ${({ theme }) => theme.text.secon_title};
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 1rem;
+  }
+  h2.title {
+    font-size: ${({ theme }) => theme.text.title};
+    text-align: center;
+    line-height: 40px;
+    font-weight: 500;
+    margin: 0 0 1rem;
+  }
+
+  h5.label {
     font-size: 12px;
     font-weight: 500;
   }
-
   p.label {
     font-size: 14px;
     color: ${ ({ theme }) => theme.colors.text };

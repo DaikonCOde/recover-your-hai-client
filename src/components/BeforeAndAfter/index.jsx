@@ -11,7 +11,7 @@ const BeforeAnfAfter = ({ urlBefore, urlAfter }) => {
   }
 
   return (
-    <ContentSlide>
+    <ContentSlide className='beforeAndAfter'>
       <span className="label labelBefore">Before</span>
       <span className="label labelAfter" >After</span>
       <div id="before" css={`background: url(${urlBefore});`}>

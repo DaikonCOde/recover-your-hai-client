@@ -22,12 +22,14 @@ export const ContentModal = styled.div`
       right: -10px;
       background: ${ ({theme}) => theme.colors.white };
       border-radius: 50%;
-      padding: 5px;
+      padding: 3px;
       box-shadow: ${ ({theme}) => theme.shadow.box };
       color: ${ ({theme}) => theme.colors.principal };
       text-align: center;
+      width: 30px;
+      height: 30px;
       svg {
-        font-size: 25px;
+        font-size: 20px;
         line-height: 30px;
       }
     }
