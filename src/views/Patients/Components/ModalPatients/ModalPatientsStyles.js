@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContentModalPatients =  styled.div`
   max-height: 100%;
   overflow-y: auto;
+  padding: 0 0 20px 0;
   .title {
     margin: 0 0 40px 0;
     color: ${ ({theme}) => theme.colors.principal };

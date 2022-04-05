@@ -53,7 +53,7 @@ export const ContentModalClinic = styled.div`
       flex-wrap: wrap;
       justify-content: space-around;
       margin: 30px 0 0;
-      gap: 15px;
+      gap: 10px;
       .item {
         width: 140px;
         height: 140px;

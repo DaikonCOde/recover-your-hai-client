@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom"
 // Animation
 import AsideLayout from "../../layout/AsideLayout"
 // Assets
-import { MdClose, MdHome, MdEmergency, MdSentimentSatisfiedAlt } from "react-icons/md"
+import { MdHome, MdEmergency, MdSentimentSatisfiedAlt } from "react-icons/md"
+import { BsQuestion } from 'react-icons/bs';
 // Styles
 import { ContentNavMobile } from "./NavMobileStyles"
 
@@ -28,6 +29,13 @@ const listMenu = [
     href: '/patients',
     icon: MdSentimentSatisfiedAlt,
   },
+  {
+    id: 4,
+    label: 'Preguntas frecuentes',
+    href: '/faqs',
+    icon: BsQuestion,
+  },
+  
 ]
 
 const NavMobile = ({ close}) => {

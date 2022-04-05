@@ -5,8 +5,10 @@ import Theme from './theme';
 import PageLayout from './layout/PageLayout';
 // Views
 import Home from './views/Home';
-import Clinics from './views/Clinics'
-import Patients from './views/Patients'
+import Clinics from './views/Clinics';
+import Patients from './views/Patients';
+import FAQs from './views/FAQs';
+
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
             <Route  index element={<Home />} />
             <Route path='/clinics' element={ <Clinics /> } />
             <Route path='/patients' element={ <Patients /> } />
+            <Route path='/faqs' element={ <FAQs /> } />
           </Route>
         </Routes>
       </Theme>
