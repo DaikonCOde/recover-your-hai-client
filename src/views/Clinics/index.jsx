@@ -25,7 +25,7 @@ const Clinics = () => {
         as={ motion.section }
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1, delay: 0.2 }}
         exit={{ opacity: 0}}
       >
         <div className="header">
@@ -34,14 +34,16 @@ const Clinics = () => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
-            variants={fadeInUp(0.8)}
+            variants={fadeInUp(0.6)}
           >
             Clínicas
           </motion.h2>
         </div>
         <motion.div 
           className="flag" onClick={toogleFilter}
-          initial={{ x: 100 }} animate={{ x: 0}}  transition={{ delay: 2, duration: 0.5 }} 
+          initial={{ x: 100 }} 
+          animate={{ x: 0}}  
+          transition={{ delay: 2, duration: 0.5 }} 
         >
           <i >
             <MdFilterAlt />

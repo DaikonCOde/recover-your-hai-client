@@ -33,7 +33,7 @@ const FAQs = () => {
       as={ motion.section }
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 1, delay: 0.2 }}
       exit={{ opacity: 0}}
     >
       <div className="header">
