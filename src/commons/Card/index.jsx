@@ -7,7 +7,7 @@ import ButtonCTA from '../ButtonCTA'
 import { motion } from 'framer-motion'
 import { fadeInRight } from '../../styles/Animations'
 
-const Card = ({ img, title, paragraph, handleClick }) => {
+const Card = ({ img, title, paragraph, handleClick, animation }) => {
   return (
     <StyleCard 
       as={motion.div}
@@ -15,7 +15,7 @@ const Card = ({ img, title, paragraph, handleClick }) => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.2 }}
-      variants={fadeInRight}
+      variants={fadeInRight( animation ? animation.delay : 0 )}
     >
       <div className="imgCard">
         <img src={img} alt={title} />

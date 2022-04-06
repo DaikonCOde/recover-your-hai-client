@@ -64,14 +64,14 @@ const Stories = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.2 }}
-          variants={zoomIn}
+          variants={zoomIn()}
         />
         <motion.p 
           className="subTitle" 
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           Estos son algunos de nuestros
         </motion.p>
@@ -80,7 +80,7 @@ const Stories = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.3 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           Casos de Éxito
         </motion.h2>
@@ -91,7 +91,7 @@ const Stories = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.4 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           En Recover creemos en la calidad y el largo plazo. Hacemos un exhaustivo seguimiento de la evolución de nuestros pacientes antes, durante y despues del tratamiento. Desde hacer un estudio sobre tu caso en particular, acompañarte en el viaje para que todo vaya como hemos prometido con un correcto y seguro seguimiento después del viaje.<br />
           Nos encanta conocer personalmente a nuestros clientes y enseñarles todo el proceso que seguirán al detalle
@@ -101,7 +101,7 @@ const Stories = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.5 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           <div 
             className="resultsSlide"

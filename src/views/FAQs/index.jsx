@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { fadeInUp, zoomIn } from '../../styles/Animations';
 import { ContentFAQs } from './FAQsStyles';
 import Accordion from '../../components/Accordion'
 
@@ -36,19 +37,39 @@ const FAQs = () => {
       exit={{ opacity: 0}}
     >
       <div className="header">
-        <h2 className="title">Preguntas frecuentes </h2>
-        <p className="paragraph">
+        <motion.h2 
+          className="title"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInUp(0.8)}
+        >
+          Preguntas frecuentes 
+        </motion.h2>
+        <motion.p 
+          className="paragraph"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInUp(1.2)}
+        >
           En este apartado podras sacarte muchas dudas comunes que surgen a la hora de investigar sobre estos tratamientos. En el caso de tener dudas sobre algo que no aparece entre estas preguntas no dudes con comunicarte y te asesoro con gusto.
-        </p>
+        </motion.p>
       </div>
       
       <div className="listQuestions">
-        <h3 className="subTitle">Antes de un injerto capilar</h3>
-        <div class="contentAccordion">
+        <motion.div 
+          class="contentAccordion"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={zoomIn(1.8)}
+        >
+          <h3 className="subTitle">Antes de un injerto capilar</h3>
           <Accordion
             data={dataQuestion}
           />
-        </div>
+        </motion.div>
       </div>
 
     </ContentFAQs>

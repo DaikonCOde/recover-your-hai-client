@@ -48,7 +48,7 @@ const HairAdvisor = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           ¿Porqué debería de ser tu asesor capilar?
         </motion.h2>
@@ -58,7 +58,7 @@ const HairAdvisor = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.3 }}
-        variants={fadeInUp}
+        variants={fadeInUp()}
       >
         Estos son algunos de los beneficios que recibiras por
         tenerme como tu asesor.
@@ -71,8 +71,8 @@ const HairAdvisor = () => {
               key={benefit.id}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={fadeInRight}
+              viewport={{ once: true, amount: 0.7 }}
+              variants={fadeInRight(1)}
             >
               <img src={Check} alt="" />
               <span>{benefit.label}</span>
@@ -87,7 +87,7 @@ const HairAdvisor = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.7 }}
-          variants={zoomIn}
+          variants={zoomIn()}
         >
           <img src={Before} alt="before the proccess" />
           <span>Antes</span>
@@ -97,7 +97,7 @@ const HairAdvisor = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.7 }}
-          variants={zoomIn}
+          variants={zoomIn()}
         >
           <img src={During} alt="during the proccess" />
           <span>Durante</span>
@@ -107,7 +107,7 @@ const HairAdvisor = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.7 }}
-          variants={zoomIn}
+          variants={zoomIn()}
         >
           <img src={After} alt="after the proccess" />
           <span>Despues</span>

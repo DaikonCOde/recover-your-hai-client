@@ -18,7 +18,7 @@ const Clinics = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           Clínicas
         </motion.h2>
@@ -28,7 +28,7 @@ const Clinics = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.2 }}
-        variants={fadeInUp}
+        variants={fadeInUp()}
       >
         Trabajo con las mejores clínicas de España y Turquía para garantizar la mejor opción para realizar injerto capilar
       </motion.p>

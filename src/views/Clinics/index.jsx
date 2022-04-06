@@ -8,6 +8,7 @@ import Insparya from '../../assets/insparya.png';
 import { MdFilterAlt } from 'react-icons/md';
 // Animate
 import { motion, AnimatePresence } from 'framer-motion';
+import { fadeInUp } from '../../styles/Animations';
 // Styles
 import { ContentClinics } from './ClinicsStyles.js';
 
@@ -28,7 +29,15 @@ const Clinics = () => {
         exit={{ opacity: 0}}
       >
         <div className="header">
-          <h2 className="title">Clínicas</h2>
+          <motion.h2 
+            className="title"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeInUp(0.8)}
+          >
+            Clínicas
+          </motion.h2>
         </div>
         <motion.div 
           className="flag" onClick={toogleFilter}
@@ -44,6 +53,7 @@ const Clinics = () => {
             title={'Insparya'}
             paragraph='Una de las favoritas en la península. Ha cogido gran nombre por ser la clínica de Cristiano Ronaldo, con una gran calidad y un precio intermedio. tienen clínicas en Madrid, Marbella, Oporto, Lisboa, Braga y Vilamoura desde 4000€.'
             handleClick={() => setIsOpenModal(true)}
+            animation={{delay: 1.5}}
           />
           <Card 
             img={Insparya}

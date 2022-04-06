@@ -21,14 +21,14 @@ const Experience = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.2 }}
-          variants={zoomIn}
+          variants={zoomIn()}
         />
         <motion.p 
           className="subTitle"
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.2 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           Mira como es la 
         </motion.p>
@@ -37,7 +37,7 @@ const Experience = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.3 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         > 
           Experiencia de <br /> Recover Your Hair 
         </motion.h2>
@@ -46,9 +46,9 @@ const Experience = () => {
         <motion.div 
           className="video"
           initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={fadeInUp}
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp()}
         >
           <iframe src="https://www.youtube.com/embed/ZABEDPRW_3c" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
         </motion.div>
@@ -57,7 +57,7 @@ const Experience = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.6 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           Lo he vivido y voy ayudarte
         </motion.h4>
@@ -66,7 +66,7 @@ const Experience = () => {
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.7 }}
-          variants={fadeInUp}
+          variants={fadeInUp()}
         >
           Cuando fui a elegir una clínica había tantas opciones que me sentía bloqueado. Como saber si elegía la correcta en algo tan importante. Tras mucho investigar y preguntar me decidí, sin embargo me sentía un poco incomprendido en un país extraño y a la vuelta.<br />
           Por eso me gustaría ayudarte con todo los pasos que fueron dificiles para mi.
@@ -74,7 +74,7 @@ const Experience = () => {
         <ButtonCTA 
           label='¡Quiero Asesoramiento!'
           styles="display: block; margin: 0 auto;"
-          animate={fadeInUp}
+          animation={ {delay: 0} }
         />
       </div>
     </ContentExperience>
