@@ -13,8 +13,9 @@ export const ContentHairAdvisor = styled(SectionLight)`
       display: flex;
       flex-wrap: nowrap;
       align-items: center;
-      i { 
-        color: ${({ theme }) => theme.colors.principal };
+      img { 
+        width: 50px;
+        height: 50px;
       }
       span { 
         margin: 0 0 0 10px;

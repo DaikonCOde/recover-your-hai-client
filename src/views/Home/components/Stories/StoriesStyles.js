@@ -2,7 +2,15 @@ import styled from "styled-components";
 import { SectionLight } from "../../../../styles/Sections";
 
 export const ContentStories = styled(SectionLight)`
-  
+  .header {
+    img {
+      height: 120px;
+      width: 230px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+  }
   .body {
     .contentSlides {
       margin: 30px auto;

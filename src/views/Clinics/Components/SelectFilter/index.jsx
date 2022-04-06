@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
-import { BiChevronLeft } from 'react-icons/bi';
+import { BiChevronRight } from 'react-icons/bi';
 
 import { ContentSelectFilter } from './SelectFilterStyles';
 
 const variants = {
   active: {
-    transform: 'rotate(-90deg)'
+    transform: 'rotate(90deg)'
   },
   inactive: {
     transform: 'rotate(0deg)'
@@ -50,7 +50,7 @@ const SelectFilter = ({ label ,values, change, value, name  }) => {
           initial="inactive"
           animate={controls}
         >
-          <BiChevronLeft />
+          <BiChevronRight />
         </motion.i>
 
         <AnimatePresence>

@@ -1,6 +1,7 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   background: ${({ theme }) => theme.colors.principal};
   color: ${({ theme }) => theme.colors.white};
   font-size: ${({ theme }) => theme.text.paragraph};
@@ -16,9 +17,16 @@ const Button = styled.button`
 `
 
 
-const ButtonCTA = ({ label, styles, handleClick }) => {
+const ButtonCTA = ({ label, styles, handleClick, animate }) => {
   return (
-    <Button css={styles} onClick={handleClick} >
+    <Button 
+      css={styles} 
+      onClick={handleClick} 
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={animate}
+    >
       { label }
     </Button>
   )

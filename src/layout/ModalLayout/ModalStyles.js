@@ -16,6 +16,7 @@ export const ContentModal = styled.div`
     top: 20px;
     height: 94%;
     padding: 40px 20px;
+    border-radius: ${ ({theme}) => theme.rounded.xs };
     .close {
       position: absolute;
       top: -15px;

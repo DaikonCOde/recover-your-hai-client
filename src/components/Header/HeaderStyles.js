@@ -8,6 +8,7 @@ export const ContentHeader = styled.header`
   box-shadow: ${({ theme }) => theme.shadow.box};
   z-index: 10;
   position: relative;
+  overflow: hidden;
   .contentBrand {
     width: 120px;
     img {

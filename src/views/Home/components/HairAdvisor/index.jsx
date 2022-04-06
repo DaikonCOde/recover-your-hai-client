@@ -1,10 +1,15 @@
 import React from 'react'
+// icons
 import { MdTaskAlt } from 'react-icons/md';
-
+// assets
 import Before from '../../../../assets/before.png';
 import During from '../../../../assets/during.png';
 import After from '../../../../assets/after.png';
-
+import Check from '../../../../assets/check-lottie.gif';
+// animation
+import { motion } from 'framer-motion'
+import { fadeInUp, fadeInRight, zoomIn } from '../../../../styles/Animations';
+// styles
 import { ContentHairAdvisor } from './HairAdvisorStyles';
 
 const benefits = [
@@ -38,38 +43,75 @@ const HairAdvisor = () => {
   return (
     <ContentHairAdvisor>
       <div className="header">
-        <h2 className="title">
+        <motion.h2 
+          className="title"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInUp}
+        >
           ¿Porqué debería de ser tu asesor capilar?
-        </h2>
+        </motion.h2>
       </div>
-      <p className="paragraph">
+      <motion.p 
+        className="paragraph"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         Estos son algunos de los beneficios que recibiras por
         tenerme como tu asesor.
-      </p>
+      </motion.p>
       <ul className="listBenefits">
         { 
           benefits.map( (benefit) => (
-            <li className="item" key={benefit.id}>
-              <i> <MdTaskAlt /> </i>
+            <motion.li 
+              className="item" 
+              key={benefit.id}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={fadeInRight}
+            >
+              <img src={Check} alt="" />
               <span>{benefit.label}</span>
-            </li>
+            </motion.li>
           ) )
         }
 
       </ul>
       <div className="duringProccess" >
-        <div className="card">
+        <motion.div 
+          className="card"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.7 }}
+          variants={zoomIn}
+        >
           <img src={Before} alt="before the proccess" />
           <span>Antes</span>
-        </div>
-        <div className="card">
+        </motion.div>
+        <motion.div 
+          className="card"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.7 }}
+          variants={zoomIn}
+        >
           <img src={During} alt="during the proccess" />
           <span>Durante</span>
-        </div>
-        <div className="card">
+        </motion.div>
+        <motion.div 
+          className="card"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.7 }}
+          variants={zoomIn}
+        >
           <img src={After} alt="after the proccess" />
           <span>Despues</span>
-        </div>
+        </motion.div>
       </div>
     </ContentHairAdvisor>
   )

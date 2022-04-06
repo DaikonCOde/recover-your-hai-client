@@ -3,10 +3,20 @@ import React from 'react'
 import { StyleCard } from '../../styles/Cards'
 // Components
 import ButtonCTA from '../ButtonCTA'
+// animation
+import { motion } from 'framer-motion'
+import { fadeInRight } from '../../styles/Animations'
 
 const Card = ({ img, title, paragraph, handleClick }) => {
   return (
-    <StyleCard className="cardsSlide">
+    <StyleCard 
+      as={motion.div}
+      className="cardsSlide"
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInRight}
+    >
       <div className="imgCard">
         <img src={img} alt={title} />
       </div>

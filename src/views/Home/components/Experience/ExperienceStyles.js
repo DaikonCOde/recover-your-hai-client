@@ -2,12 +2,23 @@ import styled from "styled-components";
 import { SectionGray } from '../../../../styles/Sections';
 
 export const ContentExperience = styled(SectionGray)`
+  .header {
+    img {
+      height: 70px;
+      width: 230px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+  }
   .body {
     .video {
       width: 100%;
-      height: 200px;
-      background: #333;
       margin: 0 0 30px 0;
+      iframe {
+        width: 100%;
+        height: 220px;
+      }
     }
 
     .subTitle {

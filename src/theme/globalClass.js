@@ -46,7 +46,7 @@ export const GlobalClass = createGlobalStyle`
     top: 0;
     width: 100%;
     height: 100vh;
-    background: ${ ({ theme }) => theme.opacity.text[20]};
+    background: ${ ({ theme }) => theme.opacity.text[50]};
     z-index: ${ ({ theme}) => theme.index[10] };
   }
 

@@ -1,36 +1,22 @@
 // hooks
 import { useState, useEffect } from 'react';
-import { useAnimation, motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 // Component
 import BeforeAndAfter from '../../../../components/BeforeAndAfter';
 // styles
 import { ContentStories } from './StoriesStyles'
+// animation
+import { motion } from "framer-motion";
+import { fadeInUp, zoomIn } from '../../../../styles/Animations';
 // icons
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+// assets
+import Celebration from '../../../../assets/celebration-lottie.gif';
 
 const Stories = () => {
 
   const slideRef = document.querySelector('#resultsSlide');
   const [ traslate, setTraslate ] = useState(0);
   const [ childsSlide, setChildsSlide] = useState(0);
-
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  const sectionVariants = {
-    visible: {
-      y: 1,
-      opacity: 1, 
-      transition: {
-        duration: 1.2
-      }
-    },  
-    hidden: {
-      y: 200,
-      opacity: 0,
-    }
-  }
 
   // change before and after
   useEffect( () => {
@@ -39,12 +25,6 @@ const Stories = () => {
     setChildsSlide(amount)
   }, [slideRef] )
   
-  // observer 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
 
   // function to change the before and after slide
   const handleArrows = (e, position) => {
@@ -77,26 +57,52 @@ const Stories = () => {
 
 
   return (
-    <ContentStories as={motion.section}
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={sectionVariants}
-    >
+    <ContentStories>
       <div className="header">
-        <p className="subTitle" >
+        <motion.img 
+          src={Celebration} alt="" 
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={zoomIn}
+        />
+        <motion.p 
+          className="subTitle" 
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeInUp}
+        >
           Estos son algunos de nuestros
-        </p>
-        <h2 className="title" >
+        </motion.p>
+        <motion.h2 
+          className="title"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeInUp}
+        >
           Casos de Éxito
-        </h2>
+        </motion.h2>
       </div>
       <div className="body">
-        <p className="paragraph">
+        <motion.p 
+          className="paragraph"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeInUp}
+        >
           En Recover creemos en la calidad y el largo plazo. Hacemos un exhaustivo seguimiento de la evolución de nuestros pacientes antes, durante y despues del tratamiento. Desde hacer un estudio sobre tu caso en particular, acompañarte en el viaje para que todo vaya como hemos prometido con un correcto y seguro seguimiento después del viaje.<br />
           Nos encanta conocer personalmente a nuestros clientes y enseñarles todo el proceso que seguirán al detalle
-        </p>
-        <div className="contentSlides">
+        </motion.p>
+        <motion.div 
+          className="contentSlides"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+        >
           <div 
             className="resultsSlide"
             id='resultsSlide'
@@ -133,7 +139,7 @@ const Stories = () => {
           </i>
           <div className="contentArrows">
           </div>
-        </div>
+        </motion.div>
       </div>
     </ContentStories>
   )

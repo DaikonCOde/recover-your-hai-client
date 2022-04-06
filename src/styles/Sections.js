@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const TitleSection = styled.section`
   color: ${({ theme }) => theme.colors.title};
+  overflow: hidden;
   .header {
     margin: 0 0 30px 0;
     .title {
@@ -21,6 +22,7 @@ const TitleSection = styled.section`
 export const SectionLight = styled(TitleSection)`
   padding: 40px 15px;
   background: ${({ theme }) => theme.colors.white};
+
 `
 
 export const SectionGray = styled(TitleSection)`

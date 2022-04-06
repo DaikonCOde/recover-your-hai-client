@@ -42,7 +42,7 @@ export const ContentModalClinic = styled.div`
     .map {
       margin: 20px 0 0;
       width: 100%;
-      height: 250px;
+      height: 200px;
       background: #333;
     }
   }
@@ -55,8 +55,8 @@ export const ContentModalClinic = styled.div`
       margin: 30px 0 0;
       gap: 10px;
       .item {
-        width: 140px;
-        height: 140px;
+        width: 48%;
+        height: calc(100vh - 500px);
         border-radius: ${ ({theme}) => theme.rounded.xs };
         background: #333;
       }
